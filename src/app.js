@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use(cors({
-    origin: 'https://frontportatil.onrender.com', 
+    origin: 'https://frontportatil-1.onrender.com', 
     credentials: true 
 }));
 // app.use(cors());
