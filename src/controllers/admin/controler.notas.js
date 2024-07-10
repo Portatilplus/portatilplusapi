@@ -3,10 +3,10 @@ import mensaje from "../../res/mensaje";
 
 
 const agregarnotas = async(req, res)=>{
-    const {tarea,notas, prioridad, estado}= req.body;
+    const {titulo,notas, prioridad, estado}= req.body;
 
     try {
-        const respuesta = await pool.query(`CALL sp_agregar_notas('${tarea}','${notas}','${prioridad}','${estado}');`)
+        const respuesta = await pool.query(`CALL inssrtar_nota('${titulo}','${notas}','${prioridad}','${estado}');`)
     if(respuesta[0].affectedRows == 1){
         mensaje.success(req, res, 200, "Notas agregadas");
     }else{
@@ -29,10 +29,10 @@ const listarnotas = async(req, res)=>{
 }
 
 const modificarnotas = async(req, res)=>{
-    const {idnotas, tarea,  notas, prioridad, estado} = req.body;
+    const {idnotas, titulo,  notas, prioridad, estado} = req.body;
 
     try {
-        const respuesta = await pool.query(`CALL sp_editar_notas(?,?,?,?,?);`,[idnotas, tarea, notas, prioridad, estado])
+        const respuesta = await pool.query(`CALL sp_editar_notas(?,?,?,?,?);`,[idnotas, titulo, notas, prioridad, estado])
         if(respuesta[0].affectedRows == 1){
             mensaje.success(req, res, 200, "Notas modificadas");
         }else{
