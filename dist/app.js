@@ -10,7 +10,6 @@ var _dotenv = require("dotenv");
 var _routes = _interopRequireDefault(require("./routes"));
 var _morgan = _interopRequireDefault(require("morgan"));
 var _cors = _interopRequireDefault(require("cors"));
-var _nodeOs = _interopRequireDefault(require("node:os"));
 (0, _dotenv.config)();
 var app = (0, _express["default"])();
 
@@ -19,8 +18,7 @@ app.use(_express["default"].json());
 app.use((0, _morgan["default"])("dev"));
 app.use((0, _cors["default"])({
   origin: 'https://frontportatil.onrender.com',
-  // Replace with your frontend origin
-  credentials: true // Allow cookies to be sent with requests
+  credentials: true
 }));
 // app.use(cors())
 

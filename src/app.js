@@ -3,7 +3,6 @@ import { config } from 'dotenv';
 import rutas from './routes';
 import morgan from 'morgan';
 import cors from 'cors';
-import os from 'node:os'
 config();
 
 const app = express();
@@ -13,8 +12,8 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 app.use(cors({
-    origin: 'https://frontportatil.onrender.com', // Replace with your frontend origin
-    credentials: true // Allow cookies to be sent with requests
+    origin: 'https://frontportatil.onrender.com', 
+    credentials: true 
 }));
 // app.use(cors())
 
