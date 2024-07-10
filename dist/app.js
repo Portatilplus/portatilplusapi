@@ -16,12 +16,11 @@ var app = (0, _express["default"])();
 // middleware
 app.use(_express["default"].json());
 app.use((0, _morgan["default"])("dev"));
-
-// app.use(cors({
-//     origin: 'https://frontportatil.onrender.com', 
-//     credentials: true 
-// }));
-app.use((0, _cors["default"])());
+app.use((0, _cors["default"])({
+  origin: 'https://frontportatil.onrender.com',
+  credentials: true
+}));
+// app.use(cors());
 
 // rutas
 app.use("/", _routes["default"]);

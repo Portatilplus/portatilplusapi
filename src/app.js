@@ -11,11 +11,11 @@ const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
 
-// app.use(cors({
-//     origin: 'https://frontportatil.onrender.com', 
-//     credentials: true 
-// }));
-app.use(cors());
+app.use(cors({
+    origin: 'https://frontportatil.onrender.com', 
+    credentials: true 
+}));
+// app.use(cors());
 
 
 // rutas
