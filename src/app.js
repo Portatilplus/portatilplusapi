@@ -12,11 +12,11 @@ const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
 
-// app.use(cors({
-//     origin: 'https://frontportatil.onrender.com', // Replace with your frontend origin
-//     credentials: true // Allow cookies to be sent with requests
-// }));
-app.use(cors())
+app.use(cors({
+    origin: 'https://frontportatil.onrender.com', // Replace with your frontend origin
+    credentials: true // Allow cookies to be sent with requests
+}));
+// app.use(cors())
 
 
 
