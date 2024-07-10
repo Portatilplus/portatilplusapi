@@ -13,7 +13,19 @@ var _mensaje = _interopRequireDefault(require("../res/mensaje"));
 var _jsonwebtoken = _interopRequireDefault(require("jsonwebtoken"));
 var _dotenv = require("dotenv");
 var _nodemailer = _interopRequireDefault(require("nodemailer"));
+/**
+ * este es el controlador de usuarios
+ * @module usuarios
+ */
+
 (0, _dotenv.config)();
+
+/**
+ * esta funcion me sirve para que un usuario se pueda registrar
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var agregarregistro = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
     var nombre, apellido, telefono, correo, contrasenasincifrar, rol, estado, contrasena, salt, hash, _contrasena, respuesta, msg;
@@ -75,6 +87,13 @@ var agregarregistro = /*#__PURE__*/function () {
 }();
 // este es el de login
 
+/**
+ * esta funcion me sirve para que un usuario se pueda loguear
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var login = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(req, res) {
     var _req$body, correo, contrasena, resultado, contracorrecta, payload, token;
@@ -143,6 +162,13 @@ var login = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
+
+/**
+ * estos son para mandar una notificacion al correo de cuando se registro
+ * @param {*} message 
+ * @param {*} receiverEmail 
+ * @param {*} subject 
+ */
 var sendEmail = /*#__PURE__*/function () {
   var _ref3 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee3(message, receiverEmail, subject) {
     var transporter, info;

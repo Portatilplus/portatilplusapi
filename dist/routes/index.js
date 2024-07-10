@@ -19,6 +19,11 @@ var _ruta8 = _interopRequireDefault(require("./admin/ruta.estadistica"));
 var _pazysalvo = _interopRequireDefault(require("./admin/pazysalvo"));
 var rutas = (0, _express.Router)();
 // rutas admin
+
+/**
+ * estas son las ritas del administrador donde el se mueve
+ * @type {Object}
+ */
 rutas.use("/", _ruta["default"]);
 rutas.use("/admin", _ruta2["default"]);
 rutas.use("/admin", _ruta3["default"]);

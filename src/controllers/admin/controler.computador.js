@@ -1,7 +1,18 @@
+/**
+ * este es el controlador de computador
+ * @module computador
+ */
 import pool from "../../database/db";
 import mensaje from "../../res/mensaje";
 
 //  metodos 
+/**
+ * esta funcion me sirve para que le adminstrador listar los computadores
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * @returns este es para validar los campos vacios
+ */
 const listarcomputador = async(req, res)=>{
     try {
         const [respuesta] = await pool.query(`CALL sp_listar_registro_computador();`);
@@ -10,6 +21,13 @@ const listarcomputador = async(req, res)=>{
         mensaje.error(req, res, 500, "error al mostrar computadores")
     }
 }
+/**
+ * esta funcion me sirve para que le adminstrador agregue los computadores
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * @returns este es para validar los campos vacios
+ */
 const agregarcomputador = async(req, res)=>{
     const {marca,modelo,area,estado} = req.body;
 
@@ -34,6 +52,13 @@ const agregarcomputador = async(req, res)=>{
     }
     
 }
+/**
+ * esta funcion me sirve para que le adminstrador modificar los computadores
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ *
+ */
 const modificarcomputador =async(req, res)=>{
     const {idcomputador, marca, modelo, estado, area} = req.body;
     try {
@@ -47,7 +72,13 @@ const modificarcomputador =async(req, res)=>{
         mensaje.error(req,res, 500, "error al modificar computador");
     }
 };
-
+/**
+ * esta funcion me sirve para que le adminstrador elimine los computadores
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const eleminarcomputador = async (req, res) => {
     const idcomputador = req.params.idcomputador;
 

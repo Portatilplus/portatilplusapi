@@ -9,6 +9,18 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _db = _interopRequireDefault(require("../../database/db"));
 var _mensaje = _interopRequireDefault(require("../../res/mensaje"));
+/**
+ * este es el controlador de pazysalvo
+ * @module pazysalvo
+ */
+
+/**
+ * esta funcion me sirve para agregar un paz y salvo a los usuarios
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var agregarpazysalvo = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
     var _req$body, nombre, apellido, telefono, sanciones, descripcion, respuesta;
@@ -49,6 +61,13 @@ var agregarpazysalvo = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
+/**
+ * esta funcion me sirve para  listar un paz y salvo a los usuarios
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var listarpazysalvo = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(req, res) {
     var respuesta;
@@ -77,6 +96,13 @@ var listarpazysalvo = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
+/**
+ * esta funcion me sirve para  modificar un paz y salvo a los usuarios
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var modificarpazysalvo = /*#__PURE__*/function () {
   var _ref3 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee3(req, res) {
     var _req$body2, idpazysalvo, nombre, apellido, telefono, sanciones, descripcion, respuesta;
@@ -110,6 +136,13 @@ var modificarpazysalvo = /*#__PURE__*/function () {
     return _ref3.apply(this, arguments);
   };
 }();
+/**
+ * esta funcion me sirve para  eliminar un paz y salvo a los usuarios
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var eliminarpazysalvo = /*#__PURE__*/function () {
   var _ref4 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee4(req, res) {
     var idpazysalvo, respuesta;

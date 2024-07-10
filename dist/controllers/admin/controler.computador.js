@@ -10,7 +10,19 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _db = _interopRequireDefault(require("../../database/db"));
 var _mensaje = _interopRequireDefault(require("../../res/mensaje"));
+/**
+ * este es el controlador de computador
+ * @module computador
+ */
+
 //  metodos 
+/**
+ * esta funcion me sirve para que le adminstrador listar los computadores
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * @returns este es para validar los campos vacios
+ */
 var listarcomputador = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
     var _yield$pool$query, _yield$pool$query2, respuesta;
@@ -41,6 +53,13 @@ var listarcomputador = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
+/**
+ * esta funcion me sirve para que le adminstrador agregue los computadores
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * @returns este es para validar los campos vacios
+ */
 var agregarcomputador = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(req, res) {
     var _req$body, marca, modelo, area, estado, respuesta;
@@ -81,6 +100,13 @@ var agregarcomputador = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
+/**
+ * esta funcion me sirve para que le adminstrador modificar los computadores
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ *
+ */
 var modificarcomputador = /*#__PURE__*/function () {
   var _ref3 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee3(req, res) {
     var _req$body2, idcomputador, marca, modelo, estado, area, respuesta;
@@ -114,6 +140,13 @@ var modificarcomputador = /*#__PURE__*/function () {
     return _ref3.apply(this, arguments);
   };
 }();
+/**
+ * esta funcion me sirve para que le adminstrador elimine los computadores
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var eleminarcomputador = /*#__PURE__*/function () {
   var _ref4 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee4(req, res) {
     var idcomputador, respuesta;

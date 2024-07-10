@@ -1,7 +1,17 @@
+/**
+ * este es el controlador de notas
+ * @module notas
+ */
 import pool from "../../database/db";
 import mensaje from "../../res/mensaje";
 
-
+/**
+ * esta funcion me sirve para que le adminstrador agregue las notas
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const agregarnotas = async(req, res)=>{
     const {titulo,notas, prioridad, estado}= req.body;
 
@@ -17,7 +27,13 @@ const agregarnotas = async(req, res)=>{
     }
 
 }
-
+/**
+ * esta funcion me sirve para que le adminstrador agregue los accesorios
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const listarnotas = async(req, res)=>{
     try {
         const respuesta = await pool.query(`CALL sp_listar_notas();`);
@@ -27,7 +43,12 @@ const listarnotas = async(req, res)=>{
     }
  
 }
-
+/**
+ * esta funcion me sirve para que le adminstrador modifique las notas
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ */
 const modificarnotas = async(req, res)=>{
     const {idnotas, titulo,  notas, prioridad, estado} = req.body;
 
@@ -42,6 +63,12 @@ const modificarnotas = async(req, res)=>{
         mensaje.error(req, res, 400, "error");
     }
 }
+/**
+ * esta funcion me sirve para que le adminstrador elimine las notas
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ */
 const eliminarnotas = async(req, res)=>{
     const idnotas = req.params.idnotas;
     try {

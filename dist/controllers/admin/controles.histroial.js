@@ -9,7 +9,19 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _db = _interopRequireDefault(require("../../database/db"));
 var _mensaje = _interopRequireDefault(require("../../res/mensaje"));
+/**
+ * este es el controlador de historial
+ * @module historial
+ */
+
 // historial completo
+/**
+ * esta funcion me sirve para que mostar el historial
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var historial = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
     var respuesta;
@@ -40,6 +52,13 @@ var historial = /*#__PURE__*/function () {
 }();
 
 // historial especifico
+/**
+ * esta funcion me sirve para historial de las reservas
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var listarhistorial = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(req, res) {
     var id_reserva, respuesta;
@@ -69,6 +88,14 @@ var listarhistorial = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
+
+/**
+ * esta funcion me sirve para historial de las reservas
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var historialreserva = /*#__PURE__*/function () {
   var _ref3 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee3(req, res) {
     var respuesta;

@@ -9,6 +9,18 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _db = _interopRequireDefault(require("../../database/db"));
 var _mensaje = _interopRequireDefault(require("../../res/mensaje"));
+/**
+ * este es el controlador de notas
+ * @module notas
+ */
+
+/**
+ * esta funcion me sirve para que le adminstrador agregue las notas
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var agregarnotas = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
     var _req$body, titulo, notas, prioridad, estado, respuesta;
@@ -42,6 +54,13 @@ var agregarnotas = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
+/**
+ * esta funcion me sirve para que le adminstrador agregue los accesorios
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var listarnotas = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(req, res) {
     var respuesta;
@@ -70,6 +89,12 @@ var listarnotas = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
+/**
+ * esta funcion me sirve para que le adminstrador modifique las notas
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ */
 var modificarnotas = /*#__PURE__*/function () {
   var _ref3 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee3(req, res) {
     var _req$body2, idnotas, titulo, notas, prioridad, estado, respuesta;
@@ -103,6 +128,12 @@ var modificarnotas = /*#__PURE__*/function () {
     return _ref3.apply(this, arguments);
   };
 }();
+/**
+ * esta funcion me sirve para que le adminstrador elimine las notas
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ */
 var eliminarnotas = /*#__PURE__*/function () {
   var _ref4 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee4(req, res) {
     var idnotas, respuesta;

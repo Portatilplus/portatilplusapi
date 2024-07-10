@@ -9,6 +9,19 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 var _db = _interopRequireDefault(require("../../database/db"));
 var _mensaje = _interopRequireDefault(require("../../res/mensaje"));
+/**
+ * este es el controlador de estadisticas
+ * @module estadisticas
+ */
+
+// historial completo
+/**
+ * esta funcion me sirve para que mostrar las estadisticas de los computadore
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var computadordispo = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
     var respuesta;
@@ -37,6 +50,15 @@ var computadordispo = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
+
+// historial completo
+/**
+ * esta funcion me sirve para que mostar las estadisticas de los accesorios
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var accesoriodispo = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2(req, res) {
     var respuesta;
@@ -65,6 +87,14 @@ var accesoriodispo = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
+
+// historial completo
+/**
+ * esta funcion me sirve para que mostar las estadisticas de las reservas
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var reservaactuva = /*#__PURE__*/function () {
   var _ref3 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee3(req, res) {
     var respuesta;
@@ -93,6 +123,15 @@ var reservaactuva = /*#__PURE__*/function () {
     return _ref3.apply(this, arguments);
   };
 }();
+
+// historial completo
+/**
+ * esta funcion me sirve para que mostar las estadisticas de los computadores de diseño
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var diseño = /*#__PURE__*/function () {
   var _ref4 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee4(req, res) {
     var respuesta;
@@ -121,6 +160,15 @@ var diseño = /*#__PURE__*/function () {
     return _ref4.apply(this, arguments);
   };
 }();
+
+// historial completo
+/**
+ * esta funcion me sirve para que mostar las estadisticas de los administracion
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var administracion = /*#__PURE__*/function () {
   var _ref5 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee5(req, res) {
     var respuesta;
@@ -149,6 +197,13 @@ var administracion = /*#__PURE__*/function () {
     return _ref5.apply(this, arguments);
   };
 }();
+/**
+ * esta funcion me sirve para que mostar las estadisticas de los de software
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 var software = /*#__PURE__*/function () {
   var _ref6 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee6(req, res) {
     var respuesta;

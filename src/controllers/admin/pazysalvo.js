@@ -1,7 +1,17 @@
+/**
+ * este es el controlador de pazysalvo
+ * @module pazysalvo
+ */
 import pool  from "../../database/db";
 import mensaje from "../../res/mensaje";
 
-
+/**
+ * esta funcion me sirve para agregar un paz y salvo a los usuarios
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const agregarpazysalvo = async(req, res)=>{
     const {nombre, apellido, telefono,sanciones,descripcion} = req.body;
     
@@ -21,7 +31,13 @@ const agregarpazysalvo = async(req, res)=>{
         mensaje.error(req,res, 500, "error al agregar paz y alvo");
     }
 };
-
+/**
+ * esta funcion me sirve para  listar un paz y salvo a los usuarios
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const listarpazysalvo =async(req, res)=>{ 
     try {
         const respuesta = await pool.query(`CALL sp_listar_pazsalvo();`);
@@ -30,7 +46,13 @@ const listarpazysalvo =async(req, res)=>{
         mensaje.error(req, res, 500, "error al mostrar");
     }
 };
-
+/**
+ * esta funcion me sirve para  modificar un paz y salvo a los usuarios
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const modificarpazysalvo =async(req, res)=>{
     const {idpazysalvo,nombre, apellido, telefono,sanciones,descripcion} = req.body;
     try {
@@ -44,7 +66,13 @@ const modificarpazysalvo =async(req, res)=>{
         mensaje.error(req,res, 500, "error al modificar paz y salvo");
     }
 };
-
+/**
+ * esta funcion me sirve para  eliminar un paz y salvo a los usuarios
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const eliminarpazysalvo =async(req, res)=>{
     const idpazysalvo = req.params.idpazysalvo;
     try {

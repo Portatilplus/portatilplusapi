@@ -1,7 +1,20 @@
+/**
+ * este es el controlador de estadisticas
+ * @module estadisticas
+ */
 import pool from "../../database/db";
 import mensaje from "../../res/mensaje";
 
 
+
+// historial completo
+/**
+ * esta funcion me sirve para que mostrar las estadisticas de los computadore
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const computadordispo = async (req, res) =>{
     try {
         const respuesta = await pool.query(`CALL sp_mostrar_computadores()`);
@@ -11,6 +24,15 @@ const computadordispo = async (req, res) =>{
     }
 }
 
+
+// historial completo
+/**
+ * esta funcion me sirve para que mostar las estadisticas de los accesorios
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const accesoriodispo = async (req, res) =>{
     try {
         const respuesta = await pool.query(`CALL sp_mostrar_accesorios()`);
@@ -20,6 +42,14 @@ const accesoriodispo = async (req, res) =>{
     }
 } 
 
+
+// historial completo
+/**
+ * esta funcion me sirve para que mostar las estadisticas de las reservas
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const reservaactuva = async (req, res) =>{
     try {
         const respuesta = await pool.query(`CALL sp_mostrar_reserva()`);
@@ -30,6 +60,15 @@ const reservaactuva = async (req, res) =>{
 }
 
 
+
+// historial completo
+/**
+ * esta funcion me sirve para que mostar las estadisticas de los computadores de diseño
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const diseño = async (req, res) => {
     try {
         const respuesta = await pool.query(`CALL sp_mostrar_diseño()`);
@@ -38,6 +77,15 @@ const diseño = async (req, res) => {
         mensaje.error(req, res, 500, "error en la estadistica");
     }
 }
+
+// historial completo
+/**
+ * esta funcion me sirve para que mostar las estadisticas de los administracion
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const administracion = async (req, res) => {
     try {
         const respuesta = await pool.query(`CALL sp_mostrar_administracion()`);
@@ -46,6 +94,13 @@ const administracion = async (req, res) => {
         mensaje.error(req, res, 500, "error en la estadistica");
     }
 }
+/**
+ * esta funcion me sirve para que mostar las estadisticas de los de software
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const software = async (req, res) => {
     try {
         const respuesta = await pool.query(`CALL sp_mostrar_software()`);

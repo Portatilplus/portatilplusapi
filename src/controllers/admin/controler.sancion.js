@@ -1,6 +1,16 @@
+/**
+ * este es el controlador de saniones
+ * @module sanciones
+ */
 import pool from "../../database/db";
 import mensaje from "../../res/mensaje";
-
+/**
+ * esta funcion me sirve para que le adminstrador agregue las sanciones
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const agregarsancion =async(req, res)=>{
     const {id_registro, motivo} = req.body;
 
@@ -20,6 +30,13 @@ const agregarsancion =async(req, res)=>{
         mensaje.error(req,res, 500, "error al agregar sancion");
     }
 }
+/**
+ * esta funcion me sirve para que le adminstrador liste las sanciones
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const listarsancion =async(req, res)=>{
     try {
         const respuesta = await pool.query(`CALL sp_listar_sanciones();`);
@@ -28,6 +45,13 @@ const listarsancion =async(req, res)=>{
         mensaje.error(req, res, 500, "error al mostrar");
     }
 } 
+/**
+ * esta funcion me sirve para que le adminstrador modifique las sanciobes
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const modificarsancion =async(req, res)=>{
     const {id_sancion, id_registro, motivo} = req.body;
     try {
@@ -41,6 +65,13 @@ const modificarsancion =async(req, res)=>{
         mensaje.error(req,res, 500, "error al modificar la sancion");
     }
 }  
+/**
+ * esta funcion me sirve para que le adminstrador las elimine
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const eliminarsancion =async(req, res)=>{
     const id_sancion = req.params.id_sancion;
     try {

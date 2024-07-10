@@ -45,66 +45,64 @@ var _mensaje = _interopRequireDefault(require("../../res/mensaje"));
 
 var reservacion = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
-    var _req$body, nombre, id_accesorio, id_registro_computador, estado, fecha, _yield$pool$query, _yield$pool$query2, computadorDisponible, _yield$pool$query3, _yield$pool$query4, accesorioDisponible, _yield$pool$query5, _yield$pool$query6, respuesta;
+    var _req$body, nombre, id_registro_computador, estado, connection, _yield$connection$que, _yield$connection$que2, respuestaResult, respuesta;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          _req$body = req.body, nombre = _req$body.nombre, id_accesorio = _req$body.id_accesorio, id_registro_computador = _req$body.id_registro_computador, estado = _req$body.estado, fecha = _req$body.fecha;
+          _req$body = req.body, nombre = _req$body.nombre, id_registro_computador = _req$body.id_registro_computador, estado = _req$body.estado;
           _context.prev = 1;
           _context.next = 4;
-          return _db["default"].query("CALL \tsp_mostrar_computadores(?);", [id_registro_computador]);
+          return _db["default"].getConnection();
         case 4:
-          _yield$pool$query = _context.sent;
-          _yield$pool$query2 = (0, _slicedToArray2["default"])(_yield$pool$query, 1);
-          computadorDisponible = _yield$pool$query2[0];
-          if (!(computadorDisponible.length === 0 || computadorDisponible[0].estado !== 'Disponible')) {
-            _context.next = 9;
-            break;
-          }
-          return _context.abrupt("return", _mensaje["default"].error(req, res, 400, "Computador no disponible"));
+          connection = _context.sent;
+          _context.next = 7;
+          return connection.beginTransaction();
+        case 7:
+          _context.next = 9;
+          return connection.query("CALL sp_realizar_reserva(?, ?, ?, ?);", [nombre, null, id_registro_computador, estado]);
         case 9:
-          if (!id_accesorio) {
+          _yield$connection$que = _context.sent;
+          _yield$connection$que2 = (0, _slicedToArray2["default"])(_yield$connection$que, 1);
+          respuestaResult = _yield$connection$que2[0];
+          respuesta = respuestaResult[0];
+          if (!(!respuesta || respuesta.affectedRows !== 1)) {
             _context.next = 17;
             break;
           }
-          _context.next = 12;
-          return _db["default"].query("CALL sp_mostrar_accesorios(?);", [id_accesorio]);
-        case 12:
-          _yield$pool$query3 = _context.sent;
-          _yield$pool$query4 = (0, _slicedToArray2["default"])(_yield$pool$query3, 1);
-          accesorioDisponible = _yield$pool$query4[0];
-          if (!(accesorioDisponible.length === 0 || accesorioDisponible[0].estado !== 'Disponible')) {
-            _context.next = 17;
-            break;
-          }
-          return _context.abrupt("return", _mensaje["default"].error(req, res, 400, "Accesorio no disponible"));
+          _context.next = 16;
+          return connection.rollback();
+        case 16:
+          return _context.abrupt("return", _mensaje["default"].error(req, res, 400, "Error al realizar reserva del computador"));
         case 17:
           _context.next = 19;
-          return _db["default"].query("CALL sp_realizar_reserva(?, ?, ?, ?, ?);", [nombre, id_accesorio, id_registro_computador, 'Reservado', fecha]);
+          return connection.commit();
         case 19:
-          _yield$pool$query5 = _context.sent;
-          _yield$pool$query6 = (0, _slicedToArray2["default"])(_yield$pool$query5, 1);
-          respuesta = _yield$pool$query6[0];
-          if (!(respuesta.affectedRows === 1)) {
-            _context.next = 26;
-            break;
-          }
-          return _context.abrupt("return", _mensaje["default"].success(req, res, 200, "Reserva realizada"));
-        case 26:
-          return _context.abrupt("return", _mensaje["default"].error(req, res, 400, "Error al realizar reserva"));
-        case 27:
-          _context.next = 33;
-          break;
-        case 29:
-          _context.prev = 29;
+          return _context.abrupt("return", _mensaje["default"].success(req, res, 200, "Reserva del computador realizada correctamente"));
+        case 22:
+          _context.prev = 22;
           _context.t0 = _context["catch"](1);
           console.error(_context.t0);
+          // Revertir transacción en caso de error
+          if (!connection) {
+            _context.next = 28;
+            break;
+          }
+          _context.next = 28;
+          return connection.rollback();
+        case 28:
           return _context.abrupt("return", _mensaje["default"].error(req, res, 500, "Error al realizar reserva"));
-        case 33:
+        case 29:
+          _context.prev = 29;
+          // Liberar conexión
+          if (connection) {
+            connection.release();
+          }
+          return _context.finish(29);
+        case 32:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[1, 29]]);
+    }, _callee, null, [[1, 22, 29, 32]]);
   }));
   return function reservacion(_x, _x2) {
     return _ref.apply(this, arguments);

@@ -2,7 +2,10 @@ import { createPool } from "mysql2/promise";
 import { config } from "dotenv";
 config();
 
-
+/**
+ * es la conexion a la base de datos del priyecto
+ * @type {object}
+ */
 const pool = createPool({
     host:process.env.MYSQLHOST,
     user:process.env.MYSQLUSER,

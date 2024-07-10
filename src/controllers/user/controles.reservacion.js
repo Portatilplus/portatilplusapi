@@ -39,35 +39,45 @@ import mensaje from "../../res/mensaje";
 // }
 
 const reservacion = async (req, res) => {
-    const { nombre, id_accesorio, id_registro_computador,estado, fecha } = req.body;
+    const { nombre, id_registro_computador, estado } = req.body;
+    let connection;
 
     try {
-        // Verificar si el computador está disponible
-        const [computadorDisponible] = await pool.query(`CALL 	sp_mostrar_computadores(?);`, [id_registro_computador]);
-        if (computadorDisponible.length === 0 || computadorDisponible[0].estado !== 'Disponible') {
-            return mensaje.error(req, res, 400, "Computador no disponible");
+        // Iniciar la transacción
+        connection = await pool.getConnection();
+        await connection.beginTransaction();
+
+        // Realizar la reserva del computador
+        const [respuestaResult] = await connection.query(`CALL sp_realizar_reserva(?, ?, ?, ?);`, [nombre, null, id_registro_computador, estado]);
+        const respuesta = respuestaResult[0];
+
+        if (!respuesta || respuesta.affectedRows !== 1) {
+            await connection.rollback();
+            return mensaje.error(req, res, 400, "Error al realizar reserva del computador");
         }
 
-        // Verificar si el accesorio está disponible (si se proporcionó)
-        if (id_accesorio) {
-            const [accesorioDisponible] = await pool.query(`CALL sp_mostrar_accesorios(?);`, [id_accesorio]);
-            if (accesorioDisponible.length === 0 || accesorioDisponible[0].estado !== 'Disponible') {
-                return mensaje.error(req, res, 400, "Accesorio no disponible");
-            }
-        }
-
-        // Realizar la reserva
-        const [respuesta] = await pool.query(`CALL sp_realizar_reserva(?, ?, ?, ?, ?);`, [nombre, id_accesorio, id_registro_computador, 'Reservado', fecha]);
-        if (respuesta.affectedRows === 1) {
-            return mensaje.success(req, res, 200, "Reserva realizada");
-        } else {
-            return mensaje.error(req, res, 400, "Error al realizar reserva");
-        }
+        // Confirmar transacción
+        await connection.commit();
+        return mensaje.success(req, res, 200, "Reserva del computador realizada correctamente");
+        
     } catch (error) {
         console.error(error);
+        // Revertir transacción en caso de error
+        if (connection) {
+            await connection.rollback();
+        }
         return mensaje.error(req, res, 500, "Error al realizar reserva");
+    } finally {
+        // Liberar conexión
+        if (connection) {
+            connection.release();
+        }
     }
 }
+
+
+
+
 
 
 export default reservacion;

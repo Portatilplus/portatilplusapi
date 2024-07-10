@@ -13,6 +13,11 @@ import pazysalvo from "./admin/pazysalvo";
 
 const rutas = Router();
 // rutas admin
+
+/**
+ * estas son las ritas del administrador donde el se mueve
+ * @type {Object}
+ */
 rutas.use("/" ,rutaregistro);
 rutas.use("/admin" ,rutacomputador);
 rutas.use("/admin",rutaaccesorio);

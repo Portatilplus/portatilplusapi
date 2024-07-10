@@ -1,3 +1,8 @@
+/**
+ * este es el controlador de usuarios
+ * @module usuarios
+ */
+
 import bcrypt from "bcrypt"
 import pool from "../database/db.js";
 import mensajes from "../res/mensaje";
@@ -8,6 +13,12 @@ config();
 
 
 
+/**
+ * esta funcion me sirve para que un usuario se pueda registrar
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const agregarregistro =async(req, res)=>{
     const nombre = req.body.nombre;
     const apellido = req.body.apellido;
@@ -64,6 +75,13 @@ const agregarregistro =async(req, res)=>{
 }
 // este es el de login
 
+/**
+ * esta funcion me sirve para que un usuario se pueda loguear
+ * 
+ * @param {object} req captura peticiones en html
+ * @param {object} res envia peteciones en html
+ * 
+ */
 const login = async(req, res)=>{
     const {correo, contrasena}  = req.body;
     
@@ -112,6 +130,12 @@ const login = async(req, res)=>{
     }
 }
 
+/**
+ * estos son para mandar una notificacion al correo de cuando se registro
+ * @param {*} message 
+ * @param {*} receiverEmail 
+ * @param {*} subject 
+ */
 const sendEmail = async (message, receiverEmail, subject) => {
     let transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
