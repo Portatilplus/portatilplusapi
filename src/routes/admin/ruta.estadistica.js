@@ -10,6 +10,7 @@ estadistica.get("/software", metodos.software)
 // 
 estadistica.get("/estadisticaaccesorio", metodos.accesoriodispo)
 estadistica.get("/estadisticareserva", metodos.reservaactuva)
+estadistica.get("/completadas", metodos.completadas)
 
 
 export default estadistica;

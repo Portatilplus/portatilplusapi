@@ -232,11 +232,42 @@ var software = /*#__PURE__*/function () {
     return _ref6.apply(this, arguments);
   };
 }();
+// sp_listar_completadas
+
+var completadas = /*#__PURE__*/function () {
+  var _ref7 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee7(req, res) {
+    var respuesta;
+    return _regenerator["default"].wrap(function _callee7$(_context7) {
+      while (1) switch (_context7.prev = _context7.next) {
+        case 0:
+          _context7.prev = 0;
+          _context7.next = 3;
+          return _db["default"].query("CALL sp_listar_completadas()");
+        case 3:
+          respuesta = _context7.sent;
+          _mensaje["default"].success(req, res, 200, respuesta[0]);
+          _context7.next = 10;
+          break;
+        case 7:
+          _context7.prev = 7;
+          _context7.t0 = _context7["catch"](0);
+          _mensaje["default"].error(req, res, 500, "error en la estadistica");
+        case 10:
+        case "end":
+          return _context7.stop();
+      }
+    }, _callee7, null, [[0, 7]]);
+  }));
+  return function completadas(_x13, _x14) {
+    return _ref7.apply(this, arguments);
+  };
+}();
 var metodos = exports.metodos = {
   computadordispo: computadordispo,
   accesoriodispo: accesoriodispo,
   reservaactuva: reservaactuva,
   diseño: diseño,
   administracion: administracion,
-  software: software
+  software: software,
+  completadas: completadas
 };

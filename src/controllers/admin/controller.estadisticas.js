@@ -109,10 +109,17 @@ const software = async (req, res) => {
         mensaje.error(req, res, 500, "error en la estadistica");
     }
 }
+// sp_listar_completadas
 
 
-
-
+const completadas = async (req, res) => {
+    try {
+        const respuesta = await pool.query(`CALL sp_listar_completadas()`);
+        mensaje.success(req, res, 200, respuesta[0]);
+    } catch (error) {
+        mensaje.error(req, res, 500, "error en la estadistica");
+    }
+}
 
 export const metodos = {
     computadordispo,
@@ -120,5 +127,6 @@ export const metodos = {
     reservaactuva,
     diseño,
     administracion,
-    software
+    software,
+    completadas
 }
