@@ -195,6 +195,35 @@ var editarperfil = /*#__PURE__*/function () {
     return _ref3.apply(this, arguments);
   };
 }();
+var perfilunuico = /*#__PURE__*/function () {
+  var _ref4 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee4(req, res) {
+    var id_registro, respuesta;
+    return _regenerator["default"].wrap(function _callee4$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
+        case 0:
+          id_registro = req.params.id_registro;
+          _context4.prev = 1;
+          _context4.next = 4;
+          return _db["default"].query("CALL sp_perfil_unico('".concat(id_registro, "');"));
+        case 4:
+          respuesta = _context4.sent;
+          _mensaje["default"].success(req, res, 200, respuesta[0]);
+          _context4.next = 11;
+          break;
+        case 8:
+          _context4.prev = 8;
+          _context4.t0 = _context4["catch"](1);
+          _mensaje["default"].error(req, res, 500, "error al editar");
+        case 11:
+        case "end":
+          return _context4.stop();
+      }
+    }, _callee4, null, [[1, 8]]);
+  }));
+  return function perfilunuico(_x7, _x8) {
+    return _ref4.apply(this, arguments);
+  };
+}();
 
 /**
  * estos son para mandar una notificacion al correo de cuando se registro
@@ -203,10 +232,10 @@ var editarperfil = /*#__PURE__*/function () {
  * @param {*} subject 
  */
 var sendEmail = /*#__PURE__*/function () {
-  var _ref4 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee4(message, receiverEmail, subject) {
+  var _ref5 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee5(message, receiverEmail, subject) {
     var transporter, info;
-    return _regenerator["default"].wrap(function _callee4$(_context4) {
-      while (1) switch (_context4.prev = _context4.next) {
+    return _regenerator["default"].wrap(function _callee5$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
         case 0:
           transporter = _nodemailer["default"].createTransport({
             host: "smtp.gmail.com",
@@ -217,7 +246,7 @@ var sendEmail = /*#__PURE__*/function () {
               pass: process.env.EMAILER_CONTRASENA
             }
           });
-          _context4.next = 3;
+          _context5.next = 3;
           return transporter.sendMail({
             from: process.env.EMAILER_CORREO,
             to: receiverEmail,
@@ -225,20 +254,21 @@ var sendEmail = /*#__PURE__*/function () {
             text: message
           });
         case 3:
-          info = _context4.sent;
+          info = _context5.sent;
           console.log("se ha enviado al correo", info.messageId);
         case 5:
         case "end":
-          return _context4.stop();
+          return _context5.stop();
       }
-    }, _callee4);
+    }, _callee5);
   }));
-  return function sendEmail(_x7, _x8, _x9) {
-    return _ref4.apply(this, arguments);
+  return function sendEmail(_x9, _x10, _x11) {
+    return _ref5.apply(this, arguments);
   };
 }();
 var metodos = exports.metodos = {
   agregarregistro: agregarregistro,
   login: login,
-  editarperfil: editarperfil
+  editarperfil: editarperfil,
+  perfilunuico: perfilunuico
 };

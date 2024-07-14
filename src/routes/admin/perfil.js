@@ -5,6 +5,7 @@ const perfil = Router();
 
 
 perfil.put("/perfil", metodos.editarperfil)
+perfil.get("/perfil/:id_registro", metodos.perfilunuico);
 
 
 export default perfil;

@@ -146,6 +146,16 @@ const editarperfil = async(req, res) => {
         mensajes.error(req, res, 500, "error al editar");
     }
 }
+const perfilunuico = async(req, res) => {
+    const {id_registro} = req.params;
+    try {
+        const respuesta = await pool.query(`CALL sp_perfil_unico('${id_registro}');`);
+        mensajes.success(req, res, 200, respuesta[0]);
+
+    } catch (error) {
+        mensajes.error(req, res, 500, "error al editar");
+    }
+}
 
 /**
  * estos son para mandar una notificacion al correo de cuando se registro
@@ -178,7 +188,8 @@ const sendEmail = async (message, receiverEmail, subject) => {
 export const metodos={
     agregarregistro,
     login,
-    editarperfil
+    editarperfil,
+    perfilunuico
 }
 
 
