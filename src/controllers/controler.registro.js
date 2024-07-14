@@ -129,6 +129,23 @@ const login = async(req, res)=>{
         mensajes.error(req, res, 500, "error al loguearse");
     }
 }
+const editarperfil = async(req, res) => {
+    const {id_registro, nombre, apellido, telefono,correo} = req.body;
+    try {
+        const respuesta = await pool.query(`CALL sp_editar_perfil('${id_registro}',
+            '${nombre}',
+            '${apellido}',
+            '${telefono}',
+            '${correo}');`);
+        if(respuesta[0].affectedRows == 1){
+            mensajes.success(req, res, 200, "perfil editado");
+        }else{
+            mensajes.error(req, res, 400, "perfil no editado");
+        }
+    } catch (error) {
+        mensajes.error(req, res, 500, "error al editar");
+    }
+}
 
 /**
  * estos son para mandar una notificacion al correo de cuando se registro
@@ -160,7 +177,8 @@ const sendEmail = async (message, receiverEmail, subject) => {
 
 export const metodos={
     agregarregistro,
-    login
+    login,
+    editarperfil
 }
 
 

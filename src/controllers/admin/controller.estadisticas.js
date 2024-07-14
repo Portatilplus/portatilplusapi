@@ -61,54 +61,7 @@ const reservaactuva = async (req, res) =>{
 
 
 
-// historial completo
-/**
- * esta funcion me sirve para que mostar las estadisticas de los computadores de diseño
- * 
- * @param {object} req captura peticiones en html
- * @param {object} res envia peteciones en html
- * 
- */
-const diseño = async (req, res) => {
-    try {
-        const respuesta = await pool.query(`CALL sp_mostrar_diseño()`);
-        mensaje.success(req, res, 200, respuesta[0]);
-    } catch (error) {
-        mensaje.error(req, res, 500, "error en la estadistica");
-    }
-}
 
-// historial completo
-/**
- * esta funcion me sirve para que mostar las estadisticas de los administracion
- * 
- * @param {object} req captura peticiones en html
- * @param {object} res envia peteciones en html
- * 
- */
-const administracion = async (req, res) => {
-    try {
-        const respuesta = await pool.query(`CALL sp_mostrar_administracion()`);
-        mensaje.success(req, res, 200, respuesta[0]);
-    } catch (error) {
-        mensaje.error(req, res, 500, "error en la estadistica");
-    }
-}
-/**
- * esta funcion me sirve para que mostar las estadisticas de los de software
- * 
- * @param {object} req captura peticiones en html
- * @param {object} res envia peteciones en html
- * 
- */
-const software = async (req, res) => {
-    try {
-        const respuesta = await pool.query(`CALL sp_mostrar_software()`);
-        mensaje.success(req, res, 200, respuesta[0]);
-    } catch (error) {
-        mensaje.error(req, res, 500, "error en la estadistica");
-    }
-}
 // sp_listar_completadas
 
 
@@ -125,8 +78,5 @@ export const metodos = {
     computadordispo,
     accesoriodispo,
     reservaactuva,
-    diseño,
-    administracion,
-    software,
     completadas
 }

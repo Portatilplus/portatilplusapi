@@ -17,6 +17,7 @@ var _swaggerUiExpress = _interopRequireDefault(require("swagger-ui-express"));
 var _swaggerOutput = _interopRequireDefault(require("../tools/swagger-output.json"));
 var _ruta8 = _interopRequireDefault(require("./admin/ruta.estadistica"));
 var _pazysalvo = _interopRequireDefault(require("./admin/pazysalvo"));
+var _perfil = _interopRequireDefault(require("./admin/perfil"));
 var rutas = (0, _express.Router)();
 // rutas admin
 
@@ -32,6 +33,7 @@ rutas.use("/admin", _ruta6["default"]);
 rutas.use("/admin", _ruta7["default"]);
 rutas.use("/admin", _ruta8["default"]);
 rutas.use("/admin", _pazysalvo["default"]);
+rutas.use("/admin", _perfil["default"]);
 rutas.use('/doc', _swaggerUiExpress["default"].serve, _swaggerUiExpress["default"].setup(_swaggerOutput["default"]));
 
 // rutas user

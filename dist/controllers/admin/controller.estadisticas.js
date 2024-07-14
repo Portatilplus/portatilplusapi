@@ -124,15 +124,9 @@ var reservaactuva = /*#__PURE__*/function () {
   };
 }();
 
-// historial completo
-/**
- * esta funcion me sirve para que mostar las estadisticas de los computadores de diseño
- * 
- * @param {object} req captura peticiones en html
- * @param {object} res envia peteciones en html
- * 
- */
-var diseño = /*#__PURE__*/function () {
+// sp_listar_completadas
+
+var completadas = /*#__PURE__*/function () {
   var _ref4 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee4(req, res) {
     var respuesta;
     return _regenerator["default"].wrap(function _callee4$(_context4) {
@@ -140,7 +134,7 @@ var diseño = /*#__PURE__*/function () {
         case 0:
           _context4.prev = 0;
           _context4.next = 3;
-          return _db["default"].query("CALL sp_mostrar_dise\xF1o()");
+          return _db["default"].query("CALL sp_listar_completadas()");
         case 3:
           respuesta = _context4.sent;
           _mensaje["default"].success(req, res, 200, respuesta[0]);
@@ -156,118 +150,13 @@ var diseño = /*#__PURE__*/function () {
       }
     }, _callee4, null, [[0, 7]]);
   }));
-  return function diseño(_x7, _x8) {
+  return function completadas(_x7, _x8) {
     return _ref4.apply(this, arguments);
-  };
-}();
-
-// historial completo
-/**
- * esta funcion me sirve para que mostar las estadisticas de los administracion
- * 
- * @param {object} req captura peticiones en html
- * @param {object} res envia peteciones en html
- * 
- */
-var administracion = /*#__PURE__*/function () {
-  var _ref5 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee5(req, res) {
-    var respuesta;
-    return _regenerator["default"].wrap(function _callee5$(_context5) {
-      while (1) switch (_context5.prev = _context5.next) {
-        case 0:
-          _context5.prev = 0;
-          _context5.next = 3;
-          return _db["default"].query("CALL sp_mostrar_administracion()");
-        case 3:
-          respuesta = _context5.sent;
-          _mensaje["default"].success(req, res, 200, respuesta[0]);
-          _context5.next = 10;
-          break;
-        case 7:
-          _context5.prev = 7;
-          _context5.t0 = _context5["catch"](0);
-          _mensaje["default"].error(req, res, 500, "error en la estadistica");
-        case 10:
-        case "end":
-          return _context5.stop();
-      }
-    }, _callee5, null, [[0, 7]]);
-  }));
-  return function administracion(_x9, _x10) {
-    return _ref5.apply(this, arguments);
-  };
-}();
-/**
- * esta funcion me sirve para que mostar las estadisticas de los de software
- * 
- * @param {object} req captura peticiones en html
- * @param {object} res envia peteciones en html
- * 
- */
-var software = /*#__PURE__*/function () {
-  var _ref6 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee6(req, res) {
-    var respuesta;
-    return _regenerator["default"].wrap(function _callee6$(_context6) {
-      while (1) switch (_context6.prev = _context6.next) {
-        case 0:
-          _context6.prev = 0;
-          _context6.next = 3;
-          return _db["default"].query("CALL sp_mostrar_software()");
-        case 3:
-          respuesta = _context6.sent;
-          _mensaje["default"].success(req, res, 200, respuesta[0]);
-          _context6.next = 10;
-          break;
-        case 7:
-          _context6.prev = 7;
-          _context6.t0 = _context6["catch"](0);
-          _mensaje["default"].error(req, res, 500, "error en la estadistica");
-        case 10:
-        case "end":
-          return _context6.stop();
-      }
-    }, _callee6, null, [[0, 7]]);
-  }));
-  return function software(_x11, _x12) {
-    return _ref6.apply(this, arguments);
-  };
-}();
-// sp_listar_completadas
-
-var completadas = /*#__PURE__*/function () {
-  var _ref7 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee7(req, res) {
-    var respuesta;
-    return _regenerator["default"].wrap(function _callee7$(_context7) {
-      while (1) switch (_context7.prev = _context7.next) {
-        case 0:
-          _context7.prev = 0;
-          _context7.next = 3;
-          return _db["default"].query("CALL sp_listar_completadas()");
-        case 3:
-          respuesta = _context7.sent;
-          _mensaje["default"].success(req, res, 200, respuesta[0]);
-          _context7.next = 10;
-          break;
-        case 7:
-          _context7.prev = 7;
-          _context7.t0 = _context7["catch"](0);
-          _mensaje["default"].error(req, res, 500, "error en la estadistica");
-        case 10:
-        case "end":
-          return _context7.stop();
-      }
-    }, _callee7, null, [[0, 7]]);
-  }));
-  return function completadas(_x13, _x14) {
-    return _ref7.apply(this, arguments);
   };
 }();
 var metodos = exports.metodos = {
   computadordispo: computadordispo,
   accesoriodispo: accesoriodispo,
   reservaactuva: reservaactuva,
-  diseño: diseño,
-  administracion: administracion,
-  software: software,
   completadas: completadas
 };

@@ -10,6 +10,7 @@ import swaggerUi from "swagger-ui-express";
 import swaggerFile from '../tools/swagger-output.json';
 import estadistica from "./admin/ruta.estadistica";
 import pazysalvo from "./admin/pazysalvo";
+import perfil from "./admin/perfil";
 
 const rutas = Router();
 // rutas admin
@@ -26,6 +27,7 @@ rutas.use("/admin", rutahistorial);
 rutas.use("/admin", rutanota);
 rutas.use("/admin", estadistica);
 rutas.use("/admin", pazysalvo);
+rutas.use("/admin", perfil);
 
 rutas.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 

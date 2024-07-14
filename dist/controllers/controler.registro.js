@@ -162,6 +162,39 @@ var login = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
+var editarperfil = /*#__PURE__*/function () {
+  var _ref3 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee3(req, res) {
+    var _req$body2, id_registro, nombre, apellido, telefono, correo, respuesta;
+    return _regenerator["default"].wrap(function _callee3$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
+        case 0:
+          _req$body2 = req.body, id_registro = _req$body2.id_registro, nombre = _req$body2.nombre, apellido = _req$body2.apellido, telefono = _req$body2.telefono, correo = _req$body2.correo;
+          _context3.prev = 1;
+          _context3.next = 4;
+          return _db["default"].query("CALL sp_editar_perfil('".concat(id_registro, "',\n            '").concat(nombre, "',\n            '").concat(apellido, "',\n            '").concat(telefono, "',\n            '").concat(correo, "');"));
+        case 4:
+          respuesta = _context3.sent;
+          if (respuesta[0].affectedRows == 1) {
+            _mensaje["default"].success(req, res, 200, "perfil editado");
+          } else {
+            _mensaje["default"].error(req, res, 400, "perfil no editado");
+          }
+          _context3.next = 11;
+          break;
+        case 8:
+          _context3.prev = 8;
+          _context3.t0 = _context3["catch"](1);
+          _mensaje["default"].error(req, res, 500, "error al editar");
+        case 11:
+        case "end":
+          return _context3.stop();
+      }
+    }, _callee3, null, [[1, 8]]);
+  }));
+  return function editarperfil(_x5, _x6) {
+    return _ref3.apply(this, arguments);
+  };
+}();
 
 /**
  * estos son para mandar una notificacion al correo de cuando se registro
@@ -170,10 +203,10 @@ var login = /*#__PURE__*/function () {
  * @param {*} subject 
  */
 var sendEmail = /*#__PURE__*/function () {
-  var _ref3 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee3(message, receiverEmail, subject) {
+  var _ref4 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee4(message, receiverEmail, subject) {
     var transporter, info;
-    return _regenerator["default"].wrap(function _callee3$(_context3) {
-      while (1) switch (_context3.prev = _context3.next) {
+    return _regenerator["default"].wrap(function _callee4$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
         case 0:
           transporter = _nodemailer["default"].createTransport({
             host: "smtp.gmail.com",
@@ -184,7 +217,7 @@ var sendEmail = /*#__PURE__*/function () {
               pass: process.env.EMAILER_CONTRASENA
             }
           });
-          _context3.next = 3;
+          _context4.next = 3;
           return transporter.sendMail({
             from: process.env.EMAILER_CORREO,
             to: receiverEmail,
@@ -192,19 +225,20 @@ var sendEmail = /*#__PURE__*/function () {
             text: message
           });
         case 3:
-          info = _context3.sent;
+          info = _context4.sent;
           console.log("se ha enviado al correo", info.messageId);
         case 5:
         case "end":
-          return _context3.stop();
+          return _context4.stop();
       }
-    }, _callee3);
+    }, _callee4);
   }));
-  return function sendEmail(_x5, _x6, _x7) {
-    return _ref3.apply(this, arguments);
+  return function sendEmail(_x7, _x8, _x9) {
+    return _ref4.apply(this, arguments);
   };
 }();
 var metodos = exports.metodos = {
   agregarregistro: agregarregistro,
-  login: login
+  login: login,
+  editarperfil: editarperfil
 };
