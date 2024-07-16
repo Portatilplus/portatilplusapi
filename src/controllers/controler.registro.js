@@ -102,6 +102,7 @@ const login = async(req, res)=>{
             return;
         }else{
             const payload ={
+                id_registro: resultado[0][0][0].id_registro,
                 nombre:resultado[0][0][0].nombre,
                 apellido: resultado[0][0][0].apellido,
                 telefono: resultado[0][0][0].telefono,
