@@ -132,8 +132,12 @@ var login = /*#__PURE__*/function () {
           return _context2.abrupt("return");
         case 19:
           payload = {
+            nombre: resultado[0][0][0].nombre,
+            apellido: resultado[0][0][0].apellido,
+            telefono: resultado[0][0][0].telefono,
             correo: resultado[0][0][0].correo,
-            rol: resultado[0][0][0].rol
+            rol: resultado[0][0][0].rol,
+            estado: resultado[0][0][0].estado
           }; // if(payload.rol === 'Admin'){
           //     return mensajes.success(req, res, 401, {token, "rol":"/dash"});
           //   }else if(payload.rol ==='Usuario'){
