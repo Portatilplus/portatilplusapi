@@ -138,16 +138,13 @@ var login = /*#__PURE__*/function () {
             correo: resultado[0][0][0].correo,
             rol: resultado[0][0][0].rol,
             estado: resultado[0][0][0].estado
-          }; // if(payload.rol === 'Admin'){
-          //     return mensajes.success(req, res, 401, {token, "rol":"/dash"});
-          //   }else if(payload.rol ==='Usuario'){
-          //     return mensajes.success(req, res, 401, "hola usuario");
-          //   }
+          };
           token = _jsonwebtoken["default"].sign(payload, process.env.PRIVATE_KEY, {
             expiresIn: process.env.EXPIRES_IN
           });
           _mensaje["default"].success(req, res, 200, {
-            token: token
+            token: token,
+            payload: payload
           });
         case 22:
           _context2.next = 27;
