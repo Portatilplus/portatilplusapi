@@ -1,0 +1,28 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "paz",
+    "collectionId": "95142c98-956e-4163-83f2-4692a5a43eb3",
+    "dateExported": "2024-07-17T13:16:26.571Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "07c5daed-e18d-4509-b182-7babe5ece24d",
+            "colId": "95142c98-956e-4163-83f2-4692a5a43eb3",
+            "containerId": "",
+            "name": "listar",
+            "url": "https://apiportatilplus.onrender.com/admin/salvo",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-07-07T21:25:40.679Z",
+            "modified": "2024-07-08T03:15:50.491Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"idpazysalvo\":5,\n  \"nombre\":\"nosesssssssssssssssssssssssss\",\n  \"apellido\":\"ls\",\n  \"telefono\":344,\n  \"sanciones\":\"Si\",\n  \"descripcion\":\"nds\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "30tuatPjQFAUqpTUvqmeJ0Qa5RgxSsyfHojSULYV_R-x-GFq5HnroTeOupl3OB0cnjQR_Ki9TNubSjpz4GbBeA"
+}

@@ -1,0 +1,23 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "histroial",
+    "collectionId": "9883d8a6-edb1-49f5-ad5f-c90af78afcb3",
+    "dateExported": "2024-07-17T13:16:18.937Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "5b2eb945-a159-49ae-9f23-8e28e1fb2a55",
+            "colId": "9883d8a6-edb1-49f5-ad5f-c90af78afcb3",
+            "containerId": "",
+            "name": "historial",
+            "url": "http://localhost:5000/admin/estadisticacomputador",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-06-24T15:14:48.261Z",
+            "modified": "2024-07-09T04:07:20.886Z",
+            "headers": []
+        }
+    ],
+    "ref": "F0PaKeiF6htyDR3YyWEeJ5svTlltcXAuX6Hmo9e9q4-l4O9YPycUxK88ntTtC5qf-55rw1Cw_0ySHfTQzZd_uA"
+}

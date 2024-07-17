@@ -1,0 +1,54 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "api",
+    "collectionId": "c0e8f30f-e770-4d5a-ae66-0d27be58172a",
+    "dateExported": "2024-07-17T13:16:04.586Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4c857f41-dd0c-4af3-af09-62ab210634f7",
+            "colId": "c0e8f30f-e770-4d5a-ae66-0d27be58172a",
+            "containerId": "",
+            "name": "login",
+            "url": "https://portatilplusapi.onrender.com/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-06-05T12:17:58.982Z",
+            "modified": "2024-07-17T01:37:52.791Z",
+            "headers": [
+                {
+                    "name": "x-access-token",
+                    "value": "ssaceyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTc5ODA1NDEsImV4cCI6MTcxNzk4MzI0MX0.ONjFLguPrB-BqaIZvUBLskAP0z3uNbJDKygZGLZNafk"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\":\"mar\",\n  \"contrasena\":\"maris\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTc5OTQyNDksImV4cCI6MTcxNzk5Njk0OX0.auZdAfb-j8VyTJSUMQjBvRcIp7FS1MEzjI57SXG9I2Adskd"
+            }
+        },
+        {
+            "_id": "250ef443-01ea-4279-a3ee-011c5cfc8aec",
+            "colId": "c0e8f30f-e770-4d5a-ae66-0d27be58172a",
+            "containerId": "",
+            "name": "registro",
+            "url": "https://portatilplusapi.onrender.com/registro",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-06-05T12:18:09.328Z",
+            "modified": "2024-07-17T03:29:57.277Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"marithza\",\n  \"apellido\":\"castaño\",\n  \"telefono\":31723,\n  \"correo\":\"mari@gmail.com\",\n  \"contrasena\":\"maris\",\n  \"rol\":\"Admin\",\n  \"estado\":\"Activo\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "7ZE17cayV_X0FuWuBwiY9t3VxmhXtRquZDxFOcAP-RPGWfdUPIAOAcSKV3wZrnd5OLCFVl2iQXQFkTWA-wg3aA"
+}

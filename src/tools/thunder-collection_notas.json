@@ -1,0 +1,57 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "notas",
+    "collectionId": "c6fb9871-bf61-4598-9a1c-bbf0e21f8f45",
+    "dateExported": "2024-07-17T13:16:22.745Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "20911700-c6b2-47d5-af23-3e5252011894",
+            "colId": "c6fb9871-bf61-4598-9a1c-bbf0e21f8f45",
+            "containerId": "",
+            "name": "agrgar",
+            "url": "https://portatilplusapi.onrender.com/admin/notas",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-06-27T20:57:09.480Z",
+            "modified": "2024-07-10T01:06:13.381Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"tarea\":\"tarea\",\n  \"notas\":\"ver\",\n  \"prioridad\":\"Baja\",\n  \"estado\":\"Pendiente\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "4a2ede73-9fb6-4540-b94d-dccff36d5113",
+            "colId": "c6fb9871-bf61-4598-9a1c-bbf0e21f8f45",
+            "containerId": "",
+            "name": "listar",
+            "url": "http://localhost:5000/admin/historialreserva",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-06-27T20:57:16.750Z",
+            "modified": "2024-06-30T22:45:46.181Z",
+            "headers": []
+        },
+        {
+            "_id": "f5889b39-6424-4b53-9976-c523996e060a",
+            "colId": "c6fb9871-bf61-4598-9a1c-bbf0e21f8f45",
+            "containerId": "",
+            "name": "eliminar",
+            "url": "http://localhost:5000/admin/notas/39",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-06-27T21:15:57.422Z",
+            "modified": "2024-07-10T08:27:37.216Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "  \n{\n  \"idnotas\":3,\n  \"notas\":\"jeje\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "HXq1ayprPXTucMZCLWzjPXZDbN5BECjns6K6TetI5YRoUly0n7C50I4cg1Ct0DpY5zOwTAm4llGJcTgz3g7rmA"
+}

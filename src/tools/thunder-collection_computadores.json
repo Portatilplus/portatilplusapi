@@ -1,0 +1,89 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "computadores",
+    "collectionId": "06c32b4d-a56f-416d-b517-b0e34db821c3",
+    "dateExported": "2024-07-17T13:15:16.339Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "adde4e0f-6ac8-44da-a48b-2b27ec71babd",
+            "colId": "06c32b4d-a56f-416d-b517-b0e34db821c3",
+            "containerId": "",
+            "name": "eliminarcompu",
+            "url": "https://apiportatilplus.onrender.com/admin/computador/3",
+            "method": "DELETE",
+            "sortNum": 10000,
+            "created": "2024-06-03T01:41:59.644Z",
+            "modified": "2024-07-02T22:39:17.966Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"idcomputador\":4\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "d4e30501-0b6d-4891-ad11-fb809ddf553e",
+            "colId": "06c32b4d-a56f-416d-b517-b0e34db821c3",
+            "containerId": "",
+            "name": "modificar",
+            "url": "https://apiportatilplus.onrender.com/admin/computador",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-06-03T01:42:01.045Z",
+            "modified": "2024-07-06T23:29:20.667Z",
+            "headers": [
+                {
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTg0MTQyNzMsImV4cCI6MTcxODQxNjk3M30.HSDlhCYw3iJ7KF0n_G4WN1NbUBgk7lwWpDopbzR_rCM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"idcomputador\":20,\n  \"marca\":\"lenovoss\",\n  \"modelo\":\"mkedsd\",\n  \"estado\":\"Disponible\",\n  \"area\":\"Diseño\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "2ba3087c-2289-4923-9c88-931a479bdb42",
+            "colId": "06c32b4d-a56f-416d-b517-b0e34db821c3",
+            "containerId": "",
+            "name": "listarcomputadores",
+            "url": "https://apiportatilplus.onrender.com/admin/estadisticaadministracion",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-06-03T01:42:01.924Z",
+            "modified": "2024-07-07T05:20:48.282Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"idcomputador\": 2,\n  \"marca\": \"hpssssss\",\n  \"modelo\": \"sd\",\n  \"estado\": \"Disponible\",\n  \"area\": \"Administracion\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "0735df79-77d2-45ef-bba5-6af5e3f2f39f",
+            "colId": "06c32b4d-a56f-416d-b517-b0e34db821c3",
+            "containerId": "",
+            "name": "agregarcomputador",
+            "url": "https://apiportatilplus.onrender.com/admin/computador",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-06-03T02:24:57.303Z",
+            "modified": "2024-07-09T05:05:04.543Z",
+            "headers": [
+                {
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTgyOTUyMTEsImV4cCI6MTcxODI5NzkxMX0.pTBSZjuHLrUkW4rWJnmTsm6xBWp_l29YX-uTkQg8oWo"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"marca\":\"mis\",\n  \"modelo\":\"mkd3\",\n  \"area\":\"diseño\",\n  \"estado\":\"disponible\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "ZooOHihije5cQUkjMvdFhyJDQXfkeIqqxLeWdrrYb54BAnnhqxh7Z1aEoRrGDSKv6ZPW0yZ38tSP92N8i2C9eA"
+}

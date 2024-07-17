@@ -1,0 +1,40 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "reserva",
+    "collectionId": "1a0191f4-b1bf-48a5-b7d2-6149b19fbdd6",
+    "dateExported": "2024-07-17T13:16:11.263Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "12a46187-3b44-4fb1-81d1-c9fd15cf3c15",
+            "colId": "1a0191f4-b1bf-48a5-b7d2-6149b19fbdd6",
+            "containerId": "",
+            "name": "reserva",
+            "url": "http://localhost:5000/user/reserva",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-06-10T05:42:10.098Z",
+            "modified": "2024-07-10T05:06:58.661Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"cabro\",\n  \"id_accesorio\":16,\n  \"id_registro_computador\":9,\n  \"estado\":\"Activo\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "382ccb5e-9dab-499c-85d3-8073bcc3b1ef",
+            "colId": "1a0191f4-b1bf-48a5-b7d2-6149b19fbdd6",
+            "containerId": "",
+            "name": "historial",
+            "url": "http://localhost:5000/admin/historial",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-06-11T01:11:33.779Z",
+            "modified": "2024-06-26T20:19:56.092Z",
+            "headers": []
+        }
+    ],
+    "ref": "2Vz9OIQSC8hckJd5HLHgu0ejLQGcRHb86aVE7NlbQxfEvT6UGJ6ivtrIzHD14nuXOAijy7J2V-kJT0twXviI5A"
+}
